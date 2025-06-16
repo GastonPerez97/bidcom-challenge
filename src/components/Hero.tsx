@@ -1,4 +1,7 @@
+import { ArrowRight } from "lucide-react";
 import Image from "next/image";
+
+import { Button } from "./ui/Button";
 
 export default function Hero() {
   return (
@@ -16,7 +19,10 @@ export default function Hero() {
           ullamco laboris nisi ut aliquip ex ea commodo consequat.
         </h2>
 
-        <button>Get started</button>
+        <Button size="xl">
+          Get started
+          <ArrowRight />
+        </Button>
       </div>
 
       <div className="flex items-center">
