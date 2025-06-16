@@ -7,6 +7,8 @@
   --breakpoint-3xl: 1600px;
   --breakpoint-4xl: 1680px;
   --breakpoint-5xl: 1920px;
+
+  --font-lato: "Lato", sans-serif;
 }
 
 @theme inline {

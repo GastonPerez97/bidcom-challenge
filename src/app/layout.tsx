@@ -1,10 +1,17 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Lato } from "next/font/google";
 
 import "./globals.css";
 
 const inter = Inter({
   subsets: ["latin"]
+});
+
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+const lato = Lato({
+  subsets: ["latin"],
+  weight: ["100", "300", "400", "700", "900"],
+  variable: "--font-lato"
 });
 
 export const metadata: Metadata = {
