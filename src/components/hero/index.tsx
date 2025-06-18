@@ -6,7 +6,7 @@ import Link from "next/link";
 import { replaceDoubleHyphenWithEmDash } from "@/lib/strings";
 import { BidcomImage, BidcomInfo } from "@/types/bidcom-api";
 
-import { Button } from "./ui/Button";
+import { Button } from "../ui/Button";
 
 type HeroProps = {
   content: BidcomInfo;
