@@ -1,12 +1,11 @@
 import parse from "html-react-parser";
 import { ArrowRight } from "lucide-react";
-import Image from "next/image";
 import Link from "next/link";
 
+import HeroCarousel from "@/components/hero/HeroCarousel";
+import { Button } from "@/components/ui/Button";
 import { replaceDoubleHyphenWithEmDash } from "@/lib/strings";
 import { BidcomImage, BidcomInfo } from "@/types/bidcom-api";
-
-import { Button } from "../ui/Button";
 
 type HeroProps = {
   content: BidcomInfo;
@@ -32,15 +31,7 @@ export default function Hero({ content, images }: HeroProps) {
         </Button>
       </div>
 
-      <div className="flex items-center">
-        <Image
-          src="/images/hero-fallback.png"
-          alt="A woman in profile with dark hair, wearing a buttoned shirt, is set against a dark background with diagonal yellow lines."
-          width={648}
-          height={664}
-          className="max-h-[80dvh] object-contain"
-        />
-      </div>
+      <HeroCarousel images={images} />
     </section>
   );
 }
