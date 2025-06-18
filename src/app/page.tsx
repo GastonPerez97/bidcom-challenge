@@ -1,9 +1,12 @@
 import Hero from "@/components/Hero";
+import { getContent } from "@/services/content-service";
 
-export default function Home() {
+export default async function Home() {
+  const { content, images } = await getContent();
+
   return (
     <main>
-      <Hero />
+      <Hero content={content} images={images} />
     </main>
   );
 }

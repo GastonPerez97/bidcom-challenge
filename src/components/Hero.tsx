@@ -1,27 +1,34 @@
+import parse from "html-react-parser";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
+
+import { replaceDoubleHyphenWithEmDash } from "@/lib/strings";
+import { BidcomImage, BidcomInfo } from "@/types/bidcom-api";
 
 import { Button } from "./ui/Button";
 
-export default function Hero() {
+type HeroProps = {
+  content: BidcomInfo;
+  images: BidcomImage[];
+};
+
+export default function Hero({ content, images }: HeroProps) {
+  const headlineText = replaceDoubleHyphenWithEmDash(content.headline);
+
   return (
     <section className="5xl:gap-x-[15dvw] mx-auto flex h-screen w-full justify-center gap-x-[5dvw] px-16">
       <div className="flex w-[590px] flex-col items-start justify-center gap-y-6">
-        <p className="text-sm tracking-[.25em]">ABOUT &#8212; PERSONAL</p>
+        <p className="text-sm tracking-[.25em]">{headlineText}</p>
 
-        <h1 className="text-5xl text-balance">
-          ¡Hello! <b>I&apos;m Angela Smith</b>
-        </h1>
+        <h1 className="text-5xl text-balance">{parse(content.title)}</h1>
 
-        <h2>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-          ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-          ullamco laboris nisi ut aliquip ex ea commodo consequat.
-        </h2>
+        <h2>{content.description}</h2>
 
-        <Button size="xl">
-          Get started
-          <ArrowRight />
+        <Button size="xl" asChild>
+          <Link href={content.button.link}>
+            {content.button.title} <ArrowRight />
+          </Link>
         </Button>
       </div>
 
