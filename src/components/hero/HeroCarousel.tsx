@@ -34,7 +34,7 @@ export default function HeroCarousel({ images }: HeroImageDisplayProps) {
     useFallback: boolean = false
   ) => (
     <CarouselItem key={index}>
-      <div className="relative h-[80dvh]">
+      <div className="relative h-[75dvh]">
         {useFallback ? (
           <ImageWithFallback
             src={src}
@@ -60,7 +60,7 @@ export default function HeroCarousel({ images }: HeroImageDisplayProps) {
 
   return (
     <div className="flex items-center">
-      <Carousel className="w-[35dvw]">
+      <Carousel className="w-[40dvw]">
         <CarouselContent>{CarouselItems}</CarouselContent>
         <CarouselPrevious />
         <CarouselNext />
