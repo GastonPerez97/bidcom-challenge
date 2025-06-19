@@ -1,5 +1,7 @@
 "use client";
 
+import Image from "next/image";
+
 import {
   Carousel,
   CarouselContent,
@@ -11,33 +13,55 @@ import ImageWithFallback from "@/components/ui/ImageWithFallback";
 import { HERO_FALLBACK_IMAGES } from "@/consts/hero-fallback-images";
 import { BidcomImage } from "@/types/bidcom-api";
 
+const CAROUSEL_ITEM_IMAGE_PROPS = Object.freeze({
+  fill: true,
+  sizes: "(max-width: 768px) 100vw, 70vw",
+  className:
+    "rounded-tl-[150px] rounded-tr-[50px] rounded-br-[150px] rounded-bl-[50px] object-cover"
+});
+
 type HeroImageDisplayProps = {
   images: BidcomImage[];
 };
 
 export default function HeroCarousel({ images }: HeroImageDisplayProps) {
-  // TODO: Handle case when images is undefined or empty
+  const hasImages = images && images.length > 0;
+
+  const renderCarouselItem = (
+    src: string,
+    alt: string,
+    index: number,
+    useFallback: boolean = false
+  ) => (
+    <CarouselItem key={index}>
+      <div className="relative h-[80dvh]">
+        {useFallback ? (
+          <ImageWithFallback
+            src={src}
+            alt={alt}
+            fallbackSrc={HERO_FALLBACK_IMAGES[index].src}
+            fallbackAlt={HERO_FALLBACK_IMAGES[index].alt}
+            {...CAROUSEL_ITEM_IMAGE_PROPS}
+          />
+        ) : (
+          <Image src={src} alt={alt} {...CAROUSEL_ITEM_IMAGE_PROPS} />
+        )}
+      </div>
+    </CarouselItem>
+  );
+
+  const CarouselItems = hasImages
+    ? images.map(({ image }: BidcomImage, index: number) =>
+        renderCarouselItem(image, `Carousel image ${index + 1}`, index, true)
+      )
+    : HERO_FALLBACK_IMAGES.map((image, index: number) =>
+        renderCarouselItem(image.src, image.alt, index)
+      );
 
   return (
     <div className="flex items-center">
       <Carousel className="w-[35dvw]">
-        <CarouselContent>
-          {images.map(({ image }: BidcomImage, index: number) => (
-            <CarouselItem key={index}>
-              <div className="relative h-[80dvh]">
-                <ImageWithFallback
-                  src={image}
-                  alt={`Carousel image ${index + 1}`}
-                  fallbackSrc={HERO_FALLBACK_IMAGES[index].src}
-                  fallbackAlt={HERO_FALLBACK_IMAGES[index].alt}
-                  fill
-                  className="rounded-tl-[150px] rounded-tr-[50px] rounded-br-[150px] rounded-bl-[50px] object-cover"
-                />
-              </div>
-            </CarouselItem>
-          ))}
-        </CarouselContent>
-
+        <CarouselContent>{CarouselItems}</CarouselContent>
         <CarouselPrevious />
         <CarouselNext />
       </Carousel>
