@@ -21,7 +21,7 @@ const CAROUSEL_ITEM_IMAGE_PROPS = Object.freeze({
 });
 
 type HeroImageDisplayProps = {
-  images: BidcomImage[];
+  images: BidcomImage[] | null;
 };
 
 export default function HeroCarousel({ images }: HeroImageDisplayProps) {
