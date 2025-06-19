@@ -14,7 +14,8 @@ export async function makeRequest<T>(url: string, options: RequestInit = {}): Pr
   const response = await fetch(url, { method, headers, ...options });
 
   if (!response.ok) {
-    throw new Error(`HTTP error. Status: ${response.status}`);
+    const { url, status, statusText } = response;
+    throw new Error(`Error when fetching ${url}: ${status} ${statusText}`);
   }
 
   return response.json();
