@@ -9,7 +9,7 @@ export async function getContent() {
 
   try {
     [content, images] = await Promise.all([
-      makeRequest<BidcomInfo>(ENV.BIDCOM_API_BASE_URL + "BIDCOM_API_ROUTES.CHALLENGE_INFO").catch(
+      makeRequest<BidcomInfo>(ENV.BIDCOM_API_BASE_URL + BIDCOM_API_ROUTES.CHALLENGE_INFO).catch(
         (error) => {
           console.error("Failed to fetch Bidcom content:", error);
           return null;
