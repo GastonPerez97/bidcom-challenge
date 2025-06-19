@@ -4,7 +4,7 @@ import Link from "next/link";
 
 import HeroCarousel from "@/components/hero/HeroCarousel";
 import { Button } from "@/components/ui/Button";
-import { HERO_FALLBACK_CONTENT } from "@/consts/hero-fallback-images";
+import { HERO_FALLBACK_CONTENT } from "@/consts/hero-fallback-data";
 import { replaceDoubleHyphenWithEmDash } from "@/lib/strings";
 import { BidcomImage, BidcomInfo } from "@/types/bidcom-api";
 

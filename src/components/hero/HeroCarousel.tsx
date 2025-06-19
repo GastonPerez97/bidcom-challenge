@@ -10,7 +10,7 @@ import {
   CarouselPrevious
 } from "@/components/ui/Carousel";
 import ImageWithFallback from "@/components/ui/ImageWithFallback";
-import { HERO_FALLBACK_IMAGES } from "@/consts/hero-fallback-images";
+import { HERO_FALLBACK_IMAGES } from "@/consts/hero-fallback-data";
 import { BidcomImage } from "@/types/bidcom-api";
 
 const CAROUSEL_ITEM_IMAGE_PROPS = Object.freeze({
