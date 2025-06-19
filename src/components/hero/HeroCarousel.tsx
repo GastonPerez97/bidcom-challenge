@@ -17,7 +17,7 @@ const CAROUSEL_ITEM_IMAGE_PROPS = Object.freeze({
   fill: true,
   sizes: "(max-width: 768px) 100vw, 70vw",
   className:
-    "rounded-tl-[150px] rounded-tr-[50px] rounded-br-[150px] rounded-bl-[50px] object-cover"
+    "lg:rounded-tl-[150px] lg:rounded-tr-[50px] lg:rounded-br-[150px] lg:rounded-bl-[50px] rounded-tl-[80px] rounded-tr-[25px] rounded-br-[80px] rounded-bl-[25px] object-cover"
 });
 
 type HeroImageDisplayProps = {
@@ -34,7 +34,7 @@ export default function HeroCarousel({ images }: HeroImageDisplayProps) {
     useFallback: boolean = false
   ) => (
     <CarouselItem key={index}>
-      <div className="relative h-[75dvh]">
+      <div className="relative h-[40dvh] lg:h-[75dvh]">
         {useFallback ? (
           <ImageWithFallback
             src={src}
@@ -60,7 +60,7 @@ export default function HeroCarousel({ images }: HeroImageDisplayProps) {
 
   return (
     <div className="flex items-center">
-      <Carousel className="w-[40dvw]">
+      <Carousel className="w-[70dvw] lg:w-[40dvw]">
         <CarouselContent>{CarouselItems}</CarouselContent>
         <CarouselPrevious />
         <CarouselNext />

@@ -38,7 +38,12 @@ export default function Sidenav() {
         <ul className="mt-10 flex flex-col gap-y-1">
           {SIDENAV_LINKS.map(({ href, name }: SidenavLink, index: number) => (
             <li key={index}>
-              <Button variant="link" asChild onClick={() => handleSidenav(false)}>
+              <Button
+                variant="link"
+                asChild
+                className="text-base"
+                onClick={() => handleSidenav(false)}
+              >
                 <Link href={href}>{name}</Link>
               </Button>
             </li>

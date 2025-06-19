@@ -1,33 +1,31 @@
 import parse from "html-react-parser";
-import { ArrowRight } from "lucide-react";
-import Link from "next/link";
 
-import { Button } from "@/components/ui/Button";
-import { HERO_FALLBACK_CONTENT } from "@/consts/hero-fallback-data";
+import HeroCallToAction from "@/components/hero/HeroCallToAction";
+import useDeviceScreen from "@/hooks/use-device-screen";
 import { replaceDoubleHyphenWithEmDash } from "@/lib/strings";
 import { BidcomInfo } from "@/types/bidcom-api";
 
 type HeroContentProps = {
-  content: BidcomInfo | null;
+  content: BidcomInfo;
 };
 
 export default function HeroContent({ content }: HeroContentProps) {
-  const data = content || HERO_FALLBACK_CONTENT;
-  const headlineText = replaceDoubleHyphenWithEmDash(data.headline);
+  const { isDesktopScreen } = useDeviceScreen();
+  const headlineText = replaceDoubleHyphenWithEmDash(content.headline);
 
   return (
-    <div className="flex w-[590px] flex-col items-start justify-center gap-y-6">
-      <p className="text-sm tracking-[.25em]">{headlineText}</p>
+    <div className="flex flex-col items-center justify-center gap-y-6 lg:w-[590px] lg:items-start">
+      <p className="-mb-4 text-sm tracking-[.25em]">{headlineText}</p>
 
-      <h1 className="text-5xl text-balance">{parse(data.title)}</h1>
+      <h1 className="text-center text-3xl text-balance lg:text-start lg:text-5xl">
+        {parse(content.title)}
+      </h1>
 
-      <h2>{data.description}</h2>
+      <h2 className="text-center lg:text-start">{content.description}</h2>
 
-      <Button size="xl" asChild>
-        <Link href={data.button.link}>
-          {data.button.title} <ArrowRight />
-        </Link>
-      </Button>
+      {isDesktopScreen && (
+        <HeroCallToAction href={content.button.link} text={content.button.title} />
+      )}
     </div>
   );
 }
