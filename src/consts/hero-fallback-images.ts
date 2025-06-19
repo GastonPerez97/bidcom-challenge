@@ -1,4 +1,4 @@
-export const HERO_FALLBACK_IMAGES = Object.freeze([
+export const HERO_FALLBACK_IMAGES = [
   {
     src: "/images/hero/hero-fallback-1.webp",
     alt: "A grey cat is partially covered by a blanket on a couch, peeking out from underneath."
@@ -19,4 +19,4 @@ export const HERO_FALLBACK_IMAGES = Object.freeze([
     src: "/images/hero/hero-fallback-5.webp",
     alt: "Snow-capped mountains rise majestically under a clear blue sky."
   }
-]);
+];
