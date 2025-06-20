@@ -3,7 +3,10 @@ import ContactMoreInfo from "@/components/contact/ContactMoreInfo";
 
 export default function Contact() {
   return (
-    <section className="bg-muted/50 mx-auto w-full px-4 py-12 md:px-6 md:py-24 lg:py-32">
+    <section
+      id="contact"
+      className="bg-muted/50 mx-auto w-full px-4 py-12 md:px-6 md:py-24 lg:py-32"
+    >
       <div className="flex flex-col items-center justify-center space-y-4 text-center">
         <div className="space-y-4">
           <h2 className="text-3xl font-bold sm:text-5xl">Contact</h2>
