@@ -12,9 +12,10 @@ import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "./Sheet";
 
 const SIDENAV_LINKS: SidenavLink[] = [
   { href: "/", name: "Home" },
-  { href: "#about", name: "About" },
-  { href: "#services", name: "Services" },
-  { href: "#contact", name: "Contact" }
+  { href: "/#about", name: "About" },
+  { href: "/#services", name: "Services" },
+  { href: "/#contact", name: "Contact" },
+  { href: "/get-started", name: "Get Started" }
 ];
 
 export default function Sidenav() {
