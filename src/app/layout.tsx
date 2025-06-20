@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Lato } from "next/font/google";
+import { unstable_ViewTransition as ViewTransition } from "react";
 
 import Navbar from "@/components/ui/Navbar";
 import ScrollToTopButton from "@/components/ui/ScrollToTopButton";
@@ -31,7 +32,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.className} antialiased`}>
         <Navbar />
-        {children}
+        <ViewTransition>{children}</ViewTransition>
         <ScrollToTopButton />
       </body>
     </html>
