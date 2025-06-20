@@ -4,7 +4,7 @@ import { Card, CardContent } from "@/components/ui/Card";
 import { BENEFITS, SERVICES } from "@/consts/service-data";
 import { Benefit } from "@/types/services/benefit";
 
-import HeroCallToAction from "../hero/HeroCallToAction";
+import CallToAction from "../ui/CallToAction";
 import ServiceBenefit from "./ServiceBenefit";
 import ServiceCard from "./ServiceCard";
 
@@ -59,7 +59,7 @@ export default function Services() {
                   forward.
                 </p>
 
-                <HeroCallToAction href="/get-started" text="Get Started" />
+                <CallToAction href="/get-started" text="Get Started" />
               </CardContent>
             </Card>
           </div>

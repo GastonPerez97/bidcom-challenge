@@ -3,9 +3,9 @@ import Link from "next/link";
 
 import { Button } from "@/components/ui/Button";
 
-type HeroCallToActionProps = { href: string; text: string };
+type CallToActionProps = { href: string; text: string };
 
-export default function HeroCallToAction({ href, text }: HeroCallToActionProps) {
+export default function CallToAction({ href, text }: CallToActionProps) {
   return (
     <Button size="xl" className="group w-full transition-all sm:w-[300px] lg:w-auto" asChild>
       <Link href={href}>

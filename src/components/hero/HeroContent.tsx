@@ -1,6 +1,6 @@
 import parse from "html-react-parser";
 
-import HeroCallToAction from "@/components/hero/HeroCallToAction";
+import CallToAction from "@/components/ui/CallToAction";
 import useDeviceScreen from "@/hooks/use-device-screen";
 import { replaceDoubleHyphenWithEmDash } from "@/lib/strings";
 import { BidcomInfo } from "@/types/bidcom-api";
@@ -23,9 +23,7 @@ export default function HeroContent({ content }: HeroContentProps) {
 
       <h2 className="text-center lg:text-start">{content.description}</h2>
 
-      {isDesktopScreen && (
-        <HeroCallToAction href={content.button.link} text={content.button.title} />
-      )}
+      {isDesktopScreen && <CallToAction href={content.button.link} text={content.button.title} />}
     </div>
   );
 }
