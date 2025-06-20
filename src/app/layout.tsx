@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Lato } from "next/font/google";
 
 import Navbar from "@/components/ui/Navbar";
+import ScrollToTopButton from "@/components/ui/ScrollToTopButton";
 
 import "./globals.css";
 
@@ -30,8 +31,8 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.className} antialiased`}>
         <Navbar />
-
         {children}
+        <ScrollToTopButton />
       </body>
     </html>
   );
