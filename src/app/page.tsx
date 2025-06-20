@@ -1,3 +1,4 @@
+import Contact from "@/components/contact";
 import Hero from "@/components/hero";
 import { getContent } from "@/services/content-service";
 
@@ -7,6 +8,7 @@ export default async function Home() {
   return (
     <main>
       <Hero content={content} images={images} />
+      <Contact />
     </main>
   );
 }

@@ -57,7 +57,7 @@ export default function GetStarted() {
           </Button>
 
           <Button size="lg" variant="outline" className="px-8 text-lg" asChild>
-            <Link href="mailto:example@mail.com" target="_blank">
+            <Link href="mailto:example@mail.com.ar" target="_blank">
               <Mail className="mr-2 h-5 w-5" />
               Send Message
             </Link>
