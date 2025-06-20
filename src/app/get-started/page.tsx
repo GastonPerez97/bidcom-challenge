@@ -1,8 +1,8 @@
 import { Calendar, Mail, Zap } from "lucide-react";
 import Link from "next/link";
 
+import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
-import { Badge } from "@/components/ui/badge";
 
 export default function GetStarted() {
   return (
