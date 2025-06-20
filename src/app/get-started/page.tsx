@@ -1,4 +1,4 @@
-import { Calendar, Mail, Zap } from "lucide-react";
+import { ArrowLeft, Calendar, Mail, Zap } from "lucide-react";
 import Link from "next/link";
 
 import { Badge } from "@/components/ui/Badge";
@@ -8,6 +8,18 @@ export default function GetStarted() {
   return (
     <section className="flex items-center justify-center px-4 py-[80px] sm:h-screen sm:py-0">
       <div className="mx-auto max-w-5xl text-center">
+        <Button
+          variant="ghost"
+          size="sm"
+          className="group hover:text-slate-90 mb-6 text-slate-600 transition-all hover:bg-white/50"
+          asChild
+        >
+          <Link href="/">
+            <ArrowLeft className="mr-1 h-4 w-4 duration-150 group-hover:-translate-x-1" />
+            Back to Home
+          </Link>
+        </Button>
+
         <div className="mb-6 flex justify-center">
           <Badge
             variant="outline"
