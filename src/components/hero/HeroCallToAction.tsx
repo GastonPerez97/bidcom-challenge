@@ -7,9 +7,9 @@ type HeroCallToActionProps = { href: string; text: string };
 
 export default function HeroCallToAction({ href, text }: HeroCallToActionProps) {
   return (
-    <Button size="xl" className="w-full lg:w-auto" asChild>
+    <Button size="xl" className="group w-full transition-all lg:w-auto" asChild>
       <Link href={href}>
-        {text} <ArrowRight />
+        {text} <ArrowRight className="duration-150 group-hover:translate-x-1" />
       </Link>
     </Button>
   );
