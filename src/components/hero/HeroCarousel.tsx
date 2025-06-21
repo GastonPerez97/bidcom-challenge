@@ -59,7 +59,7 @@ export default function HeroCarousel({ images }: HeroImageDisplayProps) {
       );
 
   return (
-    <div className="flex items-center">
+    <div className="animate-fadeInUp flex items-center">
       <Carousel className="w-[65dvw] lg:w-[40dvw]">
         <CarouselContent>{CarouselItems}</CarouselContent>
         <CarouselPrevious />
