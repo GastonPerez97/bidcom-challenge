@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/Button";
 
 export default function GetStarted() {
   return (
-    <ViewTransition name="slide">
+    <ViewTransition name="fade">
       <section className="flex items-center justify-center px-4 py-[80px] sm:h-screen sm:py-0">
         <div className="mx-auto max-w-5xl text-center">
           <Button

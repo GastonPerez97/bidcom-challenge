@@ -7,6 +7,8 @@
   --breakpoint-5xl: 1920px;
 
   --font-lato: "Lato", sans-serif;
+
+  --animate-fadeInUp: fadeInUp 0.5s ease-in-out forwards;
 }
 
 @theme inline {
@@ -91,7 +93,18 @@
   }
 }
 
-@keyframes slideIn {
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInScale {
   from {
     opacity: 0;
     transform: translateY(20px) scale(0.98);
@@ -102,7 +115,7 @@
   }
 }
 
-@keyframes slideOut {
+@keyframes fadeOutScale {
   from {
     opacity: 1;
     transform: translateY(0) scale(1);
@@ -113,13 +126,13 @@
   }
 }
 
-::view-transition-old(slide) {
+::view-transition-old(fade) {
   opacity: 1;
-  animation: slideOut 0.5s ease-out forwards;
+  animation: fadeOutScale 0.5s ease-out forwards;
 }
 
-::view-transition-new(slide) {
+::view-transition-new(fade) {
   opacity: 0;
-  animation: slideIn 0.5s ease-out forwards;
+  animation: fadeInScale 0.5s ease-out forwards;
   animation-delay: 300ms;
 }
