@@ -5,7 +5,7 @@ import SectionHeader from "../ui/SectionHeader";
 
 export default function Contact() {
   return (
-    <section id="contact" className="mx-auto w-full px-4 py-12 md:px-6 md:py-24 lg:pt-32 lg:pb-12">
+    <section id="contact" className="mx-auto w-full px-4 pt-20 pb-12 lg:pt-20 lg:pb-12">
       <SectionHeader
         title="Contact"
         subtitle={

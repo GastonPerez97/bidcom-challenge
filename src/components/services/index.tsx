@@ -11,7 +11,7 @@ import ServiceCard from "./ServiceCard";
 
 export default function Services() {
   return (
-    <section id="services" className="mx-auto w-full px-4 py-12 lg:pt-20 lg:pb-0">
+    <section id="services" className="mx-auto w-full px-4 pt-20 pb-12 lg:pt-20 lg:pb-0">
       <div className="flex flex-col items-center justify-center space-y-4 text-center">
         <SectionHeader
           title="What I Offer"
